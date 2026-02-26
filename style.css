@@ -1,0 +1,300 @@
+/* 全体 */
+body {
+  margin: 0;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  color: #e6f0ff;
+  background: linear-gradient(to bottom, #081a3a 0%, #000000 70%);
+}
+
+/* 中央レイアウト */
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* ヘッダー */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  position: relative;
+  z-index: 2000;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px rgba(0, 120, 255, 0.6);
+}
+
+.logo p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.intro {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.intro h2 {
+    margin: 0;
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+/* ハンバーガー */
+.menu-btn {
+  font-size: 48px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* 画面暗くするやつ */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 2500;
+}
+
+/* サイドメニュー本体 */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;   /* 最初は隠す */
+  width: 300px;
+  height: 100%;
+  background: linear-gradient(to bottom, #0a1f44, #000);
+  padding: 40px 30px;
+  transition: 0.4s ease;
+  z-index: 3000;
+  box-sizing: border-box;
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+  right: 0;
+}
+
+/* 開いた状態 */
+.side-menu.active {
+  right: 0;
+  transform: translateX(0);
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* メニュー中身 */
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 50px;
+}
+
+.side-menu li {
+  margin-bottom: 25px;
+}
+
+.side-menu a {
+  text-decoration: none;
+  color: #e6f0ff;
+  font-size: 18px;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.side-menu a:hover {
+  color: #4da6ff;
+  padding-left: 10px;
+}
+
+/* ×ボタン */
+.close-btn {
+  font-size: 24px;
+  cursor: pointer;
+  text-align: right;
+}
+
+/* セクション共通 */
+section {
+  margin-bottom: 60px;
+}
+
+section h3 {
+  border-left: 3px solid #3b82f6;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+/* NEWSボックス */
+.news {
+  background: rgba(255,255,255,0.04);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.news-item {
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+.news-item:hover {
+  padding-left: 10px;
+  background: rgba(0, 120, 255, 0.08);
+}
+
+.date {
+  font-size: 13px;
+  opacity: 0.6;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+.page-title {
+  font-size: 32px;
+  margin-bottom: 50px;
+  letter-spacing: 3px;
+}
+
+/* TALENTS */
+.talent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.talent-card {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 15px;
+  transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.talent-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0,120,255,0.4);
+}
+
+.talent-img {
+  height: 200px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* NEWS詳細 */
+.news-detail {
+  background: rgba(255,255,255,0.04);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.detail-date {
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+
+.detail-title {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.detail-content p {
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #4da6ff;
+}
+
+/* NEWS一覧 */
+
+.news-list {
+  background: rgba(255,255,255,0.04);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.news-list-item {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s;
+}
+
+.news-list-item:last-child {
+  border-bottom: none;
+}
+
+.news-list-item:hover {
+  padding-left: 10px;
+  background: rgba(0,120,255,0.08);
+}
+
+.news-date {
+  display: block;
+  font-size: 14px;
+  opacity: 0.6;
+  margin-bottom: 8px;
+}
+
+.news-title {
+  text-decoration: none;
+  font-size: 18px;
+  color: #e6f0ff;
+  letter-spacing: 1px;
+}
+
+.news-title:hover {
+  color: #4da6ff;
+}
+
+/* メンバーカード */
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 120, 255, 0.4);
+}
+
+/* フッター */
+footer {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.6;
+}
